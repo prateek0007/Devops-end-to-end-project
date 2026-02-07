@@ -20,7 +20,6 @@ jobs:
           if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then echo "PASSWORD EMPTY"; else echo "PASSWORD OK"; fi
 
 
-
       - name: Docker login (manual)
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
