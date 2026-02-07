@@ -14,6 +14,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Debug secrets (safe)
+        run: |
+          if [ -z "${{ secrets.DOCKER_USERNAME }}" ]; then echo "USERNAME EMPTY"; else echo "USERNAME OK"; fi
+          if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then echo "PASSWORD EMPTY"; else echo "PASSWORD OK"; fi
+
+
+
       - name: Docker login (manual)
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
