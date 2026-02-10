@@ -18,3 +18,4 @@ This project demonstrates a complete DevOps workflow starting from application d
 
 ## Goal
 To build a production-ready DevOps pipeline following industry best practices.
+# test
